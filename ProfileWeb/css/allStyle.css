@@ -1,5 +1,6 @@
 .normal-text{
     font-size: 0.8rem;
+    text-align: justify;
 }
 
 .yellow-text{
@@ -68,4 +69,10 @@ img{
 
 .goBackHome{
     background:#F5F8FA;
+}
+
+@media screen and  (max-width:500px){
+    .myContainer{
+        width:90%;
+    }
 }
