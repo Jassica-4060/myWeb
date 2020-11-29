@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Min Design02</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/allStyle.css">
+    <style>
+       
+
+        .white-text{
+            color: #FFFFFF;
+        }
+        body{
+            color:#717171;
+            background: #EBF2FC;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+        .mainScreen{
+            position: relative;
+            width: 100%;
+            background: url(./images_02/PCjumbotron_bg-01.png) 50% 50% no-repeat;
+            background-size: cover;
+        }
+
+        .mainWrap{
+            width: 100%;
+            height: 60vh;
+        }
+
+        .mainTitle{
+            position: absolute;
+            left: 15%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .mainTitle p,.mainTitle h3 {
+            text-shadow: 0px 0px 10px #1B1737BA;
+            color: #FFFFFF;
+        }
+        .goBackText{
+            text-shadow: 0px 0px 10px #1B1737BA;
+            color: #FFFFFF;
+            font-size: larger;
+        }
+
+        .videoImg{
+            position: absolute;
+            right: 20%;
+            bottom: -55%;
+            width: 220px;
+            max-width: 356px;
+            max-height: 722px;
+            border-radius: 25px;
+            box-shadow: 0px 0px 10px -1.7px #1B1737BA;
+        }
+
+        video{
+            position: absolute;
+            top: 50px;
+        }
+
+        .ViewProjectBtn{
+            padding: 10px 35px;
+            border: 1px solid #FFB31D;
+            color: #FFB31D;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .yellowLine{
+            position: relative;
+        }
+
+        .yellowLine::before{
+            content:'';
+            position: absolute;
+            left: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height:1px;
+            background:#FFB31D;
+        }
+
+        .ProjectImgLeft{
+            position: absolute;
+            width: 750px;
+            left: -400px;
+            top: -85px;
+        }
+
+        .ProjectImgRight{
+            position: absolute;
+            width: 900px;
+            Right: -400px;
+            top: -85px;
+        }
+
+        .margin-bottom-lv1{
+            margin-bottom: 120px;
+        }
+
+        .timeLine{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            color:#717171;
+        }
+
+        .timeLine::after{
+            position: absolute;
+            content:'';
+            width: 100%;
+            height: 1px;
+            background:#717171;
+            top:37px;
+
+        }
+
+        .timeLineCircle{
+            position: relative;
+            padding-bottom: 30px;
+            height:54px;
+        }
+
+        .timeLineCircle::after{
+            position: absolute;
+            content:"";
+            left: 0;
+            top: 32px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            z-index: 10;
+            background:#FCFCFC;
+            border:1px solid #717171;
+        }
+
+      
+        @media screen and (max-width:800px){
+            .videoImg{
+                display: none;
+            }
+
+            .mainWrap{
+                width: 100%;
+                height: 200px;
+            }
+
+            .ProjectImgRight,.ProjectImgLeft{
+                position: unset;
+                width: 100%;
+            }
+
+            .ProjectImgLeft{
+                margin-left: -60px;
+            }
+
+            .ProjectImgRight{
+                margin-left: 60px;
+            }
+
+            .mobile-margin{
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .myContainer{
+                width: 100%;
+            }
+
+            .heighContent{
+                height: auto;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .myContainer{
+                padding:20px 60px !important;
+            }
+            .iconGroup{
+                margin-bottom: 50px;
+            }
+
+            .col-md-4:last-of-type .iconGroup{
+                margin-bottom: 50px;
+            }
+            .margin-bottom-lv1{
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="mainScreen">
+    <div class="mainWrap">
+        <div class="mainTitle">
+            <h3>視力自檢</h3>
+            <p>Online Mobile design</p>
+        </div>
+        <div class="videoImg">
+                <video width="100%" height="77%" src="./video/mobile-1.mp4" muted preload="auto" autoplay loop></video>
+                <img src="./images_02/mobile-1.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="myContainer pt-0">
+    <div class="d-flex row heighContent">
+        <div class="col-md-5">
+            <p class="yellow-text yellowLine">Project</p>
+            <p class="normal-text mb-5">此專案為大學光學任職期間之設計作品，為手機網頁版的優化項目，利用APP的方式呈現，讓使用者在操作上比較順手，此專案為剛接觸ＵＩ領域最具代表性的專案。</p>
+            <span class="ViewProjectBtn">View Project</span>
+        </div>
+        <div class="col-md-7"></div>
+    </div> 
+    <div class="d-flex row heighContent">
+        <div class="col-md-7 mobile-margin">
+            <picture class="ProjectImgLeft">         
+                <source srcset="./images_02/MBproblems_img_01.png" media="(max-width: 500px)">
+                <img src="./images_02/PCproblems_img_01.png" alt="">
+            </picture>
+        </div>
+        <div class="col-md-5">
+            <p class="yellow-text yellowLine">Problem</p>
+            <p class="normal-text mb-5">原介面比較簡易，比較著重在功能開發上，並沒有做多餘的介面設計。<br><br>
+                在按鈕的大小與用色上，字體與大小都沒有系列規範，視覺上給人感受比較單調，不夠吸引試用者。</p>
+        </div>
+    </div> 
+    <div class="d-flex row heighContent">
+        <div class="col-md-5">
+          <p class="yellow-text yellowLine">Design</p>
+          <p class="normal-text mb-5">此專案本身雖然並不是一個APP，但在規劃上我還是遵守APP的Ｇuildline設計，因為在操作上較直覺，色系的選擇上『視力檢測』的部分採用大學眼科藍色系，『色覺檢測』的部分採用偏一點綠的顏色，讓受試者在做檢測的時候，不會因太強烈的顏色影響測驗，風格上也比較活潑可愛，因為此系統針對的對象皆為學童。</p>
+        </div>
+        <div class="col-md-7 mobile-margin">
+            <picture class="ProjectImgRight">         
+                <source srcset="./images_02/problems_img_-1.png" media="(max-width: 500px)">
+                <img src="./images_02/PCdesign_img_01.png" alt="">
+            </picture>
+        </div>
+    </div> 
+    <div class=" heighContent">
+        <div class="d-flex row margin-bottom-lv1">
+            <div class="col-md-4">
+                <p class="yellow-text yellowLine">User Group</p>
+                <div class="iconGroup d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46.248" height="50" viewBox="0 0 46.248 50">
+                        <defs>
+                        <clipPath id="clip-path">
+                            <rect id="Rectangle_64" data-name="Rectangle 64" width="46.248" height="50" fill="#717171"/>
+                        </clipPath>
+                        </defs>
+                        <g id="Group_97" data-name="Group 97" clip-path="url(#clip-path)">
+                        <path id="Path_54" data-name="Path 54" d="M36.863,37.613c-2.334,0-4.667,0-7,.005-2.175.01-3.3-.864-2.721-3.158,1.008-3.992,1.909-8.016,3.1-11.955A6.61,6.61,0,0,1,36.9,17.757a6.619,6.619,0,0,1,6.635,4.786c1.188,3.939,2.091,7.963,3.095,11.955.517,2.055-.355,3.091-2.463,3.108-2.435.018-4.871,0-7.305.007" transform="translate(-2.515 -1.655)" fill="#717171"/>
+                        <path id="Path_55" data-name="Path 55" d="M16.228,31.794H3.753a14.092,14.092,0,0,1-.08,3.675,3.224,3.224,0,0,1-1.865,1.86c-.381.126-1.7-.986-1.709-1.549A100.387,100.387,0,0,1,.378,21.953c.449-3.584,4.034-4.606,7.353-3.044a5.968,5.968,0,0,0,4.493-.007c3.207-1.5,6.8-.626,7.262,2.778.636,4.64.4,9.407.354,14.118,0,.554-1.156,1.537-1.762,1.527a2.5,2.5,0,0,1-1.769-1.571,17.143,17.143,0,0,1-.081-3.96" transform="translate(0 -1.696)" fill="#717171"/>
+                        <path id="Path_56" data-name="Path 56" d="M16.36,5.876A5.98,5.98,0,0,1,4.4,5.611,5.9,5.9,0,0,1,10.362,0a5.89,5.89,0,0,1,6,5.876" transform="translate(-0.41 0)" fill="#717171"/>
+                        <path id="Path_57" data-name="Path 57" d="M37.332,0a5.883,5.883,0,0,1,5.931,5.94A5.983,5.983,0,0,1,31.3,5.848,5.907,5.907,0,0,1,37.332,0" transform="translate(-2.917 0)" fill="#717171"/>
+                        <path id="Path_58" data-name="Path 58" d="M4.378,40.1H9.1c-.266,4.045-.433,8-.877,11.926-.071.629-1.368,1.123-2.1,1.679-.58-.829-1.618-1.633-1.662-2.489-.189-3.582-.08-7.179-.08-11.115" transform="translate(-0.405 -3.736)" fill="#717171"/>
+                        <path id="Path_59" data-name="Path 59" d="M12.39,40.1h4.724c0,3.872.112,7.652-.092,11.415-.042.774-1.263,1.485-1.941,2.225-.651-.666-1.792-1.28-1.873-2.008-.415-3.756-.56-7.542-.818-11.633" transform="translate(-1.155 -3.736)" fill="#717171"/>
+                        <path id="Path_60" data-name="Path 60" d="M31.283,44.507H35.63a72.662,72.662,0,0,1-.436,7.543c-.118.777-1.347,1.388-2.068,2.076-.615-.793-1.666-1.539-1.759-2.388a68.794,68.794,0,0,1-.084-7.231" transform="translate(-2.91 -4.147)" fill="#717171"/>
+                        <path id="Path_61" data-name="Path 61" d="M39.7,44.494c1-.077,1.688-.176,2.37-.168a19.437,19.437,0,0,1,1.995.245,68.567,68.567,0,0,1-.087,7.211c-.089.833-1.182,1.561-1.817,2.337-.714-.81-1.893-1.541-2.048-2.444a59.886,59.886,0,0,1-.414-7.181" transform="translate(-3.699 -4.13)" fill="#717171"/>
+                        <path id="Path_62" data-name="Path 62" d="M24.769,14.536c.326-4.114,1.249-5.062,5.291-5.661.335,3.6-.937,5.018-5.291,5.661" transform="translate(-2.308 -0.827)" fill="#717171"/>
+                        <path id="Path_63" data-name="Path 63" d="M44.95,8.833c4.273.642,5.2,1.6,5.486,5.463-3.876-.011-5.159-1.236-5.486-5.463" transform="translate(-4.189 -0.823)" fill="#717171"/>
+                        </g>
+                    </svg>
+                    <p class="pl-3 mb-0 normal-text">
+                        學童<br>
+                        6歲～12歲
+                    </p>                  
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p class="yellow-text yellowLine">Device</p>
+                <div class="iconGroup d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.051" height="49.06" viewBox="0 0 29.051 49.06">
+                        <defs>
+                        <clipPath id="clip-path">
+                            <rect id="Rectangle_65" data-name="Rectangle 65" width="29.051" height="49.06" transform="translate(0 0.255)" fill="#717171"/>
+                        </clipPath>
+                        </defs>
+                        <g id="Device_MB_icon" transform="translate(0 -0.255)">
+                        <g id="Group_101" data-name="Group 101" clip-path="url(#clip-path)">
+                            <path id="Path_64" data-name="Path 64" d="M24.29,0H3.582A3.586,3.586,0,0,0,0,3.582V45.63a3.581,3.581,0,0,0,3.582,3.582H24.29a3.58,3.58,0,0,0,3.582-3.582V3.582A3.586,3.586,0,0,0,24.29,0M8.827,2.181H19.045c.262,0,.473.385.473.858s-.211.868-.473.868H8.827c-.264,0-.465-.386-.465-.868s.2-.858.465-.858m5.114,43.491a2.285,2.285,0,1,1,2.275-2.284,2.294,2.294,0,0,1-2.275,2.284m11.241-7.836H2.688V6.052H25.182Z" fill="#717171"/>
+                        </g>
+                        </g>
+                    </svg>
+                    
+                    <p class="pl-3 mb-0 normal-text">
+                        網頁版頁面，<br>
+                        但建議手機操作
+                    </p>                  
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p class="yellow-text yellowLine">Design Tools</p>
+                <div class="iconGroup d-flex">
+                    <svg id="Tool_AI_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45.287" height="45.287" viewBox="0 0 45.287 45.287">
+                        <defs>
+                          <clipPath id="clip-path">
+                            <rect id="Rectangle_66" data-name="Rectangle 66" width="45.287" height="45.287" transform="translate(0 0)" fill="#fff"/>
+                          </clipPath>
+                        </defs>
+                        <g id="Group_104" data-name="Group 104">
+                          <g id="Group_103" data-name="Group 103" clip-path="url(#clip-path)">
+                            <path id="Path_65" data-name="Path 65" d="M41.092,45,4.55,45.287A4.241,4.241,0,0,1,.288,41.092L0,4.55A4.241,4.241,0,0,1,4.2.289L40.738,0A4.241,4.241,0,0,1,45,4.2l.288,36.542A4.24,4.24,0,0,1,41.092,45" fill="#717171"/>
+                            <text id="A" transform="translate(6.81 33.137) rotate(-0.452)" fill="#fff" font-size="30.165" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">A</tspan></text>
+                          </g>
+                        </g>
+                        <text id="i" transform="matrix(1, -0.008, 0.008, 1, 29.811, 33.209)" fill="#fff" font-size="26.837" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">i</tspan></text>
+                      </svg>
+                      
+
+                </div>
+            </div>
+        </div>
+        <div class="d-flex row ">
+            <div class="col-md-12">
+                <p class="yellow-text yellowLine">Schedule</p>
+                <div class="timeLine mb-4">
+                    <div class="timeLineGroup">
+                        <div class="timeLineCircle">
+                            2020
+                        </div>
+                        <p class="gray-text normal-text mb-0">7/31 <br> Plan </span>
+                    </div>
+                    <div class="timeLineGroup">
+                        <div class="timeLineCircle">
+                        </div>
+                        <p class="gray-text normal-text mb-0">8/4 <br>Wireframe </span>
+                    </div>
+                    <div class="timeLineGroup">
+                        <div class="timeLineCircle">
+                        </div>
+                        <p class="gray-text normal-text mb-0">8/10 <br>Design </span>
+                    </div>
+                    <div class="timeLineGroup">
+                        <div class="timeLineCircle">
+                        </div>
+                        <p class="gray-text normal-text mb-0">8/13 <br>Online </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+<div class="myContainer mt-0 pt-0 pb-0">
+    <p class="yellow-text yellowLine">Wireframe</p>
+</div>   
+<div>
+    <img src="./images_02/PCwireframes_01.png" alt="">
+</div>
+<div class="myContainer">
+    <p class="yellow-text yellowLine">Guideline</p>
+    <div class="mt-4">
+        <img src="./images_02/PCguildline_01.png" alt="">
+    </div>
+</div> 
+<div>
+    <img src="./images_02/PCbanner_01.png" alt="">
+</div>
+<div class="myOtherWork bottomBox">
+    <p class="text-center pb-4">Thanks for watch<br>there’s my other Works</p>
+    <div class="row">
+        <div class="col-md-3 col-6 ptb-2">
+            <a href="portfolio-design02.html">
+                <img src="./images.html/workPC_MockUp-img01.png" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-6 ptb-2">
+            <a href="portfolio-design03.html">
+                <img src="./images.html/workPC_MockUp_img03.png" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-6 ptb-2">
+            <a href="portfolio-design04.html">
+                <img src="./images.html/workPC_MockUp_img02.png" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-6 ptb-2">
+            <a href="portfolio-design05.html">
+                <img src="./images.html/workPC_MockUp_img04.png" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+<div class="goBackHome bottomBox">
+    <p class="text-center pb-4">Or maybe you want to </p>
+    <a class="GoBackBtn" href="index.html">Go Home</a>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>

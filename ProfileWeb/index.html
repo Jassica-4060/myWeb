@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Min 作品集網站</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/allStyle.css">
+    <style>
+
+        .icon svg{
+            width: 100px;
+            height: 41.361px;
+        }
+
+        svg{
+            width: 30px;
+            height: 30px;
+        }
+       
+       .bannerHeigh{
+           display: inline-block;
+            margin:0 15px;
+            border-radius: 15px;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
+        }
+
+        .bannerHeigh img{
+            transition-delay: .2 ;
+            transition: .6s;
+            transform:scale(1)
+            
+        }
+
+        .bannerHeigh:hover img{
+            transform:scale(1.2);           
+            
+        } 
+
+        body{
+            font-family: 'Helvetica Neue';
+            color:#717171;
+            font-size: 16px;
+            background: transparent linear-gradient(90deg, #EBEEF5 0%, #EDF0FA 100%) 0% 0% no-repeat padding-box;
+           
+        }
+        .bodyWrap{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .WordStyle{
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            max-width: 500px;
+            text-align:justify;
+        }
+
+        .MainScreen{
+            width: 100%;
+            height: 100vh;
+            background: url(./images.html/bgc.png)  no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            /* background-attachment: fixed; */
+        }
+
+        .myContainer{
+            width: 80%;
+            margin: 0 auto;
+        }
+
+       
+
+        .icon{
+            position: absolute;
+            left: 75px;
+            top: 75px;
+        }
+        .slogan{
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%)
+        }
+        .slogan h1{
+            letter-spacing: 0px;
+            margin-bottom: 1.5rem;
+        }
+
+        .BtnList {
+            padding:0px;
+            display: flex;
+        }
+
+        .BtnList .linktoBtn {
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            padding: 0;
+            background: transparent linear-gradient(123deg, #F1F4F8 0%, #E3E8F1 100%) 0% 0% no-repeat padding-box;
+            border-radius: 30px;
+            position: relative;
+            -webkit-box-shadow: 0px 0px 10px 3px rgba(208,218,226,1);
+            -moz-box-shadow: 0px 0px 10px 3px rgba(208,218,226,1);
+            box-shadow: 0px 0px 10px 3px rgba(208,218,226,1);
+            margin-right: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .BtnList .linktoBtn:hover{
+            border: 1px solid orange;
+            text-decoration: none;
+        }
+        .BtnList .linktoBtn:hover .square{
+            border-right: 1px solid orange;
+            border-bottom:1px solid orange;
+        }
+
+        .BtnList .linktoBtn .square {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #eef1f6;
+            bottom: -8.4px;
+            left: 37px;
+            transform: rotate(45deg);
+            z-index: 0;
+            -webkit-box-shadow: 3px 3px 6px -3px rgba(208,218,226,1);
+            -moz-box-shadow: 3px 3px 6px -3px rgba(208,218,226,1);
+            box-shadow: 3px 3px 6px -3px rgba(208,218,226,1);
+        }
+
+        .BtnList .linktoBtn span:first-of-type{
+            color:#EFA211;
+        }
+
+        .windowBox{
+            width: 100%;
+            height: auto;
+            box-shadow: 0px 0px 50px #546A8266;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .windowBoxHeader{
+            background:#EBF2FC;
+            height: 42px;
+            width: 100%;
+            padding: 10px 25px;
+        }
+        .windowBoxContent{
+            background: #FAFDFF;
+            height: auto;
+            padding: 40px 40px;
+        }
+
+        .ContentScreen{
+            width: 100%;
+        }
+
+        .ContentScreen .circleBtn{
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .ContentScreen .circleBtn.red{
+            background: transparent linear-gradient(142deg, #FBBDBD 0%, #D95353 100%) 0% 0% no-repeat padding-box;
+        }
+
+        .ContentScreen .circleBtn.green{
+            background: transparent linear-gradient(142deg, #C3DEBA 0%, #83B979 100%) 0% 0% no-repeat padding-box;
+        }
+
+        .ContentScreen .circleBtn.yellow{
+            background: transparent linear-gradient(142deg, #FFE4AE 0%, #ECAF38 100%) 0% 0% no-repeat padding-box;
+        }
+
+        .profilePic{
+            max-width: 150px;
+             max-height: 150px;
+            padding:10px;
+            border-radius: 50%;
+            background: #EDF0F2 0% 0% no-repeat padding-box;
+            box-shadow: 0px 0px 10px #DDDDDD;
+        }
+
+        .timeLine{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            color:#F39E25;
+        }
+
+        .timeLine::after{
+            position: absolute;
+            content:'';
+            width: 100%;
+            height: 1px;
+            background:#F39E25;
+            top:37px;
+
+        }
+
+        .timeLineCircle{
+            position: relative;
+            padding-bottom: 30px;
+        }
+
+        .timeLineCircle::after{
+            position: absolute;
+            content:"";
+            left: 0;
+            top: 32px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            z-index: 10;
+            background:#FCFCFC;
+            border:1px solid #F39E25;
+        }
+
+        .moreBtn{
+            cursor: pointer;
+        }
+
+        .hiddenContent{
+            display: none;
+            margin:30px auto 0 auto;
+        }
+
+        .FooterScreen{
+            width: 100%;
+            height: auto;
+            background: url(./images.html/footer_bgc.png) bottom center no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-wrap:wrap;
+            justify-content: center;
+            align-items: center;
+            padding-top: 70px;
+            padding-bottom: 20px;
+        }
+
+        .myCardText{
+            margin-right: 1.5rem;
+        }
+        .myCardImg{
+            width: 150px;
+            height: auto;
+        }
+
+        .DownloadBtn{
+            padding:7px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border:1px solid #EFA211;
+            color:#EFA211;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        
+
+        @media screen and (max-width: 650px){
+            .timeLine{
+                flex-direction: column;
+            }
+            .timeLine::after {
+                position: absolute;
+                content: '';
+                width: 1px;
+                height: 100%;
+                background: #F39E25;
+                top: 0;
+                left: 5px;
+            }
+            .timeLineCircle {
+                padding-bottom: 0px;
+                padding-left: 30px;
+            }
+
+            .timeLineGroup{
+                margin-bottom: 30px;
+            }
+
+            .timeLineGroup .normal-text{
+                padding-left: 30px;
+            }
+            
+            .timeLineCircle::after {
+                top: 0;
+            }
+
+            .mobile-margin-bottom{
+                margin-bottom: 20px;
+            }
+            .BtnList{
+                flex-wrap: wrap;
+            }
+            .BtnList .linktoBtn{
+                width: 100%;
+                margin-right: 0px;
+                margin-bottom: 20px;;
+            }
+
+            .slogan h1{
+                white-space: nowrap;
+            }
+            .icon {
+                position: absolute;
+                left: 20px;
+                top: 10px;
+            }
+            .slogan h2 {
+               white-space: nowrap;
+            }
+
+            .WordStyle{
+                font-size: 16px;
+            }
+
+            .mobile-icon-margin svg{
+                margin: 0 10px 10px 0;
+            }
+
+            .myCardText{
+                margin-right: 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bodyWrap">
+        <div class="MainScreen mb-5">
+            <div class="icon">
+                <svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="41.361" viewBox="0 0 146.18 41.361">
+                    <defs>
+                    <clipPath id="clip-path">
+                        <rect id="Rectangle_1" data-name="Rectangle 1" width="146.18" height="41.361" fill="none"/>
+                    </clipPath>
+                    </defs>
+                    <g id="Group_6" data-name="Group 6" clip-path="url(#clip-path)">
+                    <path id="Path_16" data-name="Path 16" d="M298.489,29.918s-1.775-8.672-2.935-13.868c-1.139-5.105-1.67-7.684-1.67-8.954a8.529,8.529,0,0,1,1.459-5.233A4.183,4.183,0,0,1,299.271,0a4.809,4.809,0,0,1,3.943,1.94,7.677,7.677,0,0,1,1.565,4.976,31.582,31.582,0,0,1-1.057,9.015c-1.241,5.018-2.98,13.986-2.98,13.986Zm-2.424,7.736a3.663,3.663,0,1,1,1.073,2.635,3.564,3.564,0,0,1-1.073-2.635" transform="translate(-200.409 -0.001)" fill="#efa211"/>
+                    <path id="Path_17" data-name="Path 17" d="M32.995,35.45a15.377,15.377,0,0,1-5.029,9.913,15.76,15.76,0,0,1-10.624,3.522q-7.791,0-12.566-5.089T0,30.409q0-8.634,4.86-13.772T17.872,11.5a15.947,15.947,0,0,1,10.552,3.4,13.225,13.225,0,0,1,4.667,9.286H24.553a6.5,6.5,0,0,0-2.376-3.847,7.557,7.557,0,0,0-4.595-1.29,7.093,7.093,0,0,0-6.03,3.015q-2.219,3.015-2.219,8.249,0,5.21,2.1,8.092a6.883,6.883,0,0,0,5.909,2.882,7.558,7.558,0,0,0,4.908-1.5,6.714,6.714,0,0,0,2.3-4.341Z" transform="translate(0 -7.842)" fill="#717171"/>
+                    <path id="Path_18" data-name="Path 18" d="M139.309,49.758V14.23h12.518l4.679,17.293q.627,2.292,1.134,4.45t.893,4.209q.458-2.171,1.037-4.546t1.327-5.1l4.414-16.3H177.8V49.758h-8.3V34.008q0-1.664.085-4.667t.253-6.934l-6.825,27.351H154l-6.681-27.351q.168,4.728.265,8.5t.1,5.9V49.758Z" transform="translate(-94.999 -9.704)" fill="#717171"/>
+                    <path id="Path_19" data-name="Path 19" d="M362.675,48.324V12.8h9.841l6.705,11.674q1.64,2.846,3.111,5.644t2.773,5.523q-.193-4.028-.289-7.549t-.1-6.2V12.8H393.5V48.324h-9.816l-6.971-12.011q-1.23-2.122-2.677-4.763t-3.063-5.7q.265,3.473.386,6.464t.121,5.306V48.324Z" transform="translate(-247.319 -8.726)" fill="#717171"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="slogan">
+                <h1 class="gray-color">Hello! I’m C-Min</h1>
+                <p class="WordStyle">
+                    I like to resolve design problems, create smart user interface and imagine useful interaction, focusing on the user-centered design.
+                </p>
+                <div class="BtnListWrap">
+                    <ul class="BtnList">
+                        <a class="linktoBtn" href="aboutMe">
+                            <span># About Me</span> 
+                            <span class="square"></span>
+                        </a>
+                        <a class="linktoBtn" href="myWork">
+                            <span># My Work</span> 
+                            <span class="square"></span>
+                        </a>
+                        <a class="linktoBtn" href="contactMe">
+                            <span># Contect Me</span> 
+                            <span class="square"></span>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ContentScreen mb-5">
+            <div class="aboutMe myContainer mb-4 pb-0" id="aboutMe">
+                <div class="windowBox">
+                    <div class="windowBoxHeader d-flex align-items-center">
+                        <div class="circleBtn red mr-2"></div>
+                        <div class="circleBtn green"></div>
+                    </div>
+                    <div class="windowBoxContent">
+                        <div class=" d-flex row">
+                            <div class="col-md-3 justify-content-center  d-flex align-items-center">
+                                <div class="profilePic d-inline-block">
+                                    <img src="./images.html/PC_AboutMe_img.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>黃思敏</h3>
+                                <p class="normal-text">一位從平面視覺設計轉戰UI設計的設計師</p>
+                                <p class="normal-text">接觸設計這個領域已有13年的時間，並擁有7年的工作經驗。從學生時期的自由創作，到商業設計，在這塊領域已經非常熟悉。但隨著科技發展，媒體資訊逐漸被網路所取代，接觸網頁設計後，發現了他無限的魅力，如今正在往這一領域努力進修發展中。</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h3>個性分析</h3>
+                                <div>
+                                    <img src="./images.html/analysis_img.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3 yellow-text moreBtn">more...</div>
+                        </div>
+                        <div class="hiddenContent col-md-8" >
+                            <h3>經歷</h3>
+                            <div class="timeLine mb-4">
+                                <div class="timeLineGroup">
+                                    <div class="timeLineCircle">
+                                        2011-2015
+                                    </div>
+                                    <p class="gray-text normal-text mb-0">銘傳大學 <br> 商業設計學系 </span>
+                                </div>
+                                <div class="timeLineGroup">
+                                    <div class="timeLineCircle">
+                                        2015-2018
+                                    </div>
+                                    <p class="gray-text normal-text mb-0">銘傳大學 <br>商業設計學系 </span>
+                                </div>
+                                <div class="timeLineGroup">
+                                    <div class="timeLineCircle">
+                                        2018-2021
+                                    </div>
+                                    <p class="gray-text normal-text mb-0">銘傳大學 <br>商業設計學系 </span>
+                                </div>
+                            </div>
+                            <h3>技能</h3>
+                            <div class="d-flex flex-wrap justify-content-md-between mobile-icon-margin">
+                                <svg id="Group_20" data-name="Group 20" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                    <rect id="Rectangle_6" data-name="Rectangle 6" width="34" height="34" rx="5" fill="#9b9b9b"/>
+                                    <text id="Ai" transform="translate(5 26)" fill="#fff" font-size="22" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">Ai</tspan></text>
+                                </svg>
+                                <svg id="Group_21" data-name="Group 21" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                    <rect id="Rectangle_7" data-name="Rectangle 7" width="34" height="34" rx="5" fill="#9b9b9b"/>
+                                    <text id="Ps" transform="translate(5 26)" fill="#fff" font-size="22" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">Ps</tspan></text>
+                                </svg>
+                                <svg id="Group_22" data-name="Group 22" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                    <rect id="Rectangle_9" data-name="Rectangle 9" width="34" height="34" rx="5" fill="#9b9b9b"/>
+                                    <text id="Id" transform="translate(7 26)" fill="#fff" font-size="22" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">Id</tspan></text>
+                                </svg>
+                                <svg id="Group_23" data-name="Group 23" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                    <rect id="Rectangle_10" data-name="Rectangle 10" width="34" height="34" rx="5" fill="#9b9b9b"/>
+                                    <text id="Xd" transform="translate(4 26)" fill="#fff" font-size="22" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="0">Xd</tspan></text>
+                                </svg>
+                                <svg id="Group_24" data-name="Group 24" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                    <rect id="Rectangle_8" data-name="Rectangle 8" width="34" height="34" rx="5" fill="#9b9b9b"/>
+                                    <text id="Dw" transform="translate(1 26)" fill="#fff" font-size="22" font-family="Helvetica-Bold, Helvetica" font-weight="700" letter-spacing="-0.05em"><tspan x="0" y="0">D</tspan><tspan y="0" font-size="20">w</tspan></text>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                    <g id="Group_25" data-name="Group 25" transform="translate(0 3)">
+                                    <rect id="Rectangle_3739" data-name="Rectangle 3739" width="34" height="34" rx="5" transform="translate(0 -3)" fill="#9b9b9b"/>
+                                    <path id="diamond" d="M2.864,8.646l8.416,8.983L7.228,8.646H2.864ZM13.833,19.075,18.548,8.646H9.118ZM7.268,6.917l2.756-5.187H6.484L2.593,6.917Zm9.118,10.712L24.8,8.646H20.438ZM9.226,6.917h9.213L15.684,1.729h-3.7Zm11.172,0h4.674L21.182,1.729H17.643ZM22.3.351l5.187,6.917a.859.859,0,0,1-.054,1.107L14.469,22.209a.88.88,0,0,1-1.27,0L.23,8.375A.858.858,0,0,1,.176,7.268L5.363.351A.788.788,0,0,1,6.052,0H21.614A.788.788,0,0,1,22.3.351Z" transform="translate(3.001 4.771)" fill="#fff"/>
+                                    </g>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                    <g id="Group_26" data-name="Group 26" transform="translate(-3 2.406)">
+                                    <g id="_6ad8347246d3e98b7c8de3c220cfaa26" data-name="6ad8347246d3e98b7c8de3c220cfaa26" transform="translate(0 0)">
+                                        <g id="Group_15" data-name="Group 15">
+                                        <rect id="Rectangle_3740" data-name="Rectangle 3740" width="34" height="34" rx="5" transform="translate(3 -2.406)" fill="#9b9b9b"/>
+                                        <path id="Path_35" data-name="Path 35" d="M37.207-307.067c-.046.021-1.112.663-2.367,1.419l-2.292,1.383-.894-.385A19.207,19.207,0,0,0,23.08-306.2a18.853,18.853,0,0,0-8.54,2.645,9.261,9.261,0,0,0-4.184,4.506c-.946,2.481.04,5.355,2.55,7.429a15.666,15.666,0,0,0,7.181,3.144l.212.043v1.162c0,1.041.012,1.184.109,1.333l.109.171h3.674c3.444,0,3.674-.007,3.771-.128s.109-.3.132-1.348l.029-1.226.745-.157a17.044,17.044,0,0,0,2.848-.863l.843-.328,2.023,1.2c1.112.663,2.178,1.291,2.373,1.4.3.178.373.192.527.121a.488.488,0,0,0,.241-.207c.034-.085.057-1.5.057-3.665,0-3.365.006-3.537.109-3.765a7.961,7.961,0,0,0,.3-.913,4.1,4.1,0,0,0,.19-1.461,4.715,4.715,0,0,0-.4-2.118l-.195-.485v-3.522c0-3.251-.006-3.53-.1-3.665A.414.414,0,0,0,37.207-307.067Zm-.287,3.729c0,1.255-.012,2.281-.034,2.281a4.438,4.438,0,0,1-.424-.428,12.457,12.457,0,0,0-2.144-1.754l-.693-.449.545-.321c.3-.171,1.02-.606,1.6-.962s1.077-.642,1.106-.649S36.921-304.593,36.921-303.338Zm-10.431-1.6c5.307.8,9.926,3.629,10.826,6.631.138.456.149.563.052.513a27.575,27.575,0,0,0-6.287-2.652,26.166,26.166,0,0,0-19.114,1.861,9.522,9.522,0,0,1-.934.435,3.685,3.685,0,0,1,.218-.613,7.379,7.379,0,0,1,1.714-2.332,17.807,17.807,0,0,1,9.571-3.95A23.216,23.216,0,0,1,26.49-304.942Zm-.63,4.67a26.532,26.532,0,0,1,10.906,3.365,3.312,3.312,0,0,1,.613.414,15.589,15.589,0,0,1-2.224,1.1,20.051,20.051,0,0,1-6.029,1.255c-1.6.114-6.276.093-7.422-.036a29.034,29.034,0,0,1-6.992-1.64,30.6,30.6,0,0,1-2.894-1.233l-.246-.128.653-.335a26.363,26.363,0,0,1,9.909-2.781C22.782-300.351,25.109-300.336,25.859-300.272Zm-14.2,4.357a30.457,30.457,0,0,0,7.1,2.41,27.572,27.572,0,0,0,6.362.577,30.456,30.456,0,0,0,8.712-.863,21.3,21.3,0,0,0,2.78-1.063c.321-.171.378-.079.166.271-1.622,2.674-5.238,4.549-10,5.2a29.45,29.45,0,0,1-5.015.028c-4.235-.52-7.531-2-9.411-4.242a8.817,8.817,0,0,1-.814-1.155c-.321-.585-.613-1.454-.493-1.454C11.056-296.208,11.337-296.079,11.658-295.916Zm25.263,5.162c0,1.234-.012,2.246-.034,2.246s-.522-.292-1.129-.649-1.318-.777-1.582-.934l-.487-.278.648-.428a12.145,12.145,0,0,0,2.155-1.8,3.088,3.088,0,0,1,.39-.4C36.9-293,36.921-291.987,36.921-290.753Zm-12.809,2.567c1.009,0,2.126-.028,2.482-.057l.642-.064v1.44H21.16v-1.426l.562.05C22.025-288.208,23.1-288.187,24.112-288.187Z" transform="translate(-4.649 311.117)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+                                        </g>
+                                    </g>
+                                    </g>
+                                </svg>
+                                <svg id="Group_28" data-name="Group 28" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                    <rect id="Rectangle_11" data-name="Rectangle 11" width="34" height="34" rx="5" fill="#9b9b9b"/>
+                                    <text id="En" transform="translate(5 26)" fill="#fff" font-size="22" font-family="Helvetica-Bold, Helvetica" font-weight="700" letter-spacing="-0.05em"><tspan x="0" y="0">En</tspan></text>
+                                </svg>
+                                <svg id="Group_29" data-name="Group 29" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+                                    <rect id="Rectangle_12" data-name="Rectangle 12" width="34" height="34" rx="5" fill="#9b9b9b"/>
+                                    <text id="あ" transform="translate(7 26)" fill="#fff" font-size="22" font-family="PingFangTC-Semibold, PingFang TC" font-weight="600" letter-spacing="-0.05em"><tspan x="0" y="0">あ</tspan></text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="myWork myContainer mb-4" id="myWork">
+                <div class="windowBox">
+                    <div class="windowBoxHeader d-flex align-items-center">
+                        <div class="circleBtn red mr-2"></div>
+                    </div>
+                    <div class="windowBoxContent">
+                        <div class=" d-flex row mb-5">
+                            <div class="col-md-8 mobile-margin-bottom ">
+                                <a href="portfolio-design02.html" class="bannerHeigh">
+                                    <img src="./images.html/workPC_MockUp-img01.png" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-4 mobile-margin-bottom d-flex flex-column justify-content-evenly">
+                                <h3>大學光學線上視力檢測</h3>
+                                <p class="normal-text">手機網頁版的優化項目，利用APP的方式呈現，讓使用者在操作上比較順手，此專案為剛接觸ＵＩ領域最具代表性的專案。</p>
+                                <div class="d-flex justify-content-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="41" viewBox="0 0 40 45">
+                                        <defs>
+                                        <clipPath id="clip-path">
+                                            <rect id="Rectangle_1736" data-name="Rectangle 1736" width="40" height="45" fill="#efa211"/>
+                                        </clipPath>
+                                        </defs>
+                                        <g id="work_child_icon" clip-path="url(#clip-path)">
+                                        <path id="Path_1453" data-name="Path 1453" d="M35.529,35.627c-2.019,0-4.037,0-6.056,0-1.881.009-2.855-.778-2.354-2.843.872-3.593,1.651-7.215,2.681-10.759a5.74,5.74,0,0,1,5.762-4.273A5.751,5.751,0,0,1,41.3,22.065c1.027,3.545,1.809,7.166,2.677,10.759.447,1.849-.307,2.782-2.13,2.8-2.106.016-4.213,0-6.318.007" transform="translate(-5.821 -3.265)" fill="#efa211"/>
+                                        <path id="Path_1454" data-name="Path 1454" d="M14.036,30.434H3.246a13.192,13.192,0,0,1-.069,3.308,2.847,2.847,0,0,1-1.613,1.674c-.329.113-1.471-.887-1.478-1.394A94,94,0,0,1,.327,21.577c.388-3.225,3.489-4.145,6.36-2.74a4.976,4.976,0,0,0,3.886-.007c2.773-1.347,5.878-.563,6.281,2.5a91.562,91.562,0,0,1,.306,12.706c0,.5-1,1.383-1.524,1.374A2.2,2.2,0,0,1,14.106,34a16.049,16.049,0,0,1-.07-3.564" transform="translate(0 -3.346)" fill="#efa211"/>
+                                        <path id="Path_1455" data-name="Path 1455" d="M14.744,5.289a5.228,5.228,0,0,1-5.288,5.205A5.258,5.258,0,0,1,4.4,5.05a5.172,5.172,0,0,1,10.341.238" transform="translate(-0.949 0)" fill="#efa211"/>
+                                        <path id="Path_1456" data-name="Path 1456" d="M36.518,0a5.2,5.2,0,0,1,5.13,5.346A5.173,5.173,0,1,1,36.518,0" transform="translate(-6.752 0)" fill="#efa211"/>
+                                        <path id="Path_1457" data-name="Path 1457" d="M4.374,40.1H8.454c-.23,3.641-.375,7.2-.758,10.733-.061.566-1.184,1.01-1.816,1.511-.5-.746-1.4-1.47-1.438-2.24-.163-3.224-.069-6.461-.069-10" transform="translate(-0.937 -7.372)" fill="#efa211"/>
+                                        <path id="Path_1458" data-name="Path 1458" d="M12.39,40.1h4.085c0,3.485.1,6.887-.08,10.273-.036.7-1.093,1.337-1.678,2-.563-.6-1.55-1.152-1.62-1.807-.359-3.38-.484-6.788-.707-10.469" transform="translate(-2.672 -7.372)" fill="#efa211"/>
+                                        <path id="Path_1459" data-name="Path 1459" d="M31.275,44.507h3.76c-.1,2.379-.058,4.612-.377,6.789-.1.7-1.165,1.25-1.788,1.868-.532-.714-1.441-1.385-1.522-2.149a64.423,64.423,0,0,1-.073-6.508" transform="translate(-6.736 -8.183)" fill="#efa211"/>
+                                        <path id="Path_1460" data-name="Path 1460" d="M39.7,44.477c.868-.069,1.46-.158,2.05-.151a16.185,16.185,0,0,1,1.725.22,64.208,64.208,0,0,1-.075,6.49c-.077.75-1.023,1.4-1.572,2.1-.617-.729-1.638-1.387-1.771-2.2a56.061,56.061,0,0,1-.358-6.463" transform="translate(-8.562 -8.15)" fill="#efa211"/>
+                                        <path id="Path_1461" data-name="Path 1461" d="M24.769,13.97c.282-3.7,1.08-4.556,4.576-5.1.289,3.244-.81,4.516-4.576,5.1" transform="translate(-5.342 -1.632)" fill="#efa211"/>
+                                        <path id="Path_1462" data-name="Path 1462" d="M44.95,8.833c3.7.578,4.5,1.441,4.745,4.916-3.352-.01-4.462-1.112-4.745-4.916" transform="translate(-9.695 -1.624)" fill="#efa211"/>
+                                        </g>
+                                    </svg>
+                                    <svg id="work_MB_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.859" height="41" viewBox="0 0 24.859 41.98">
+                                        <defs>
+                                            <clipPath id="clip-path">
+                                            <rect id="Rectangle_1741" data-name="Rectangle 1741" width="24.859" height="46" fill="#efa211"/>
+                                            </clipPath>
+                                        </defs>
+                                        <g id="Group_4915" data-name="Group 4915" clip-path="url(#clip-path)">
+                                            <path id="Path_1469" data-name="Path 1469" d="M112.827,0H95.107a3.069,3.069,0,0,0-3.065,3.065v35.98a3.064,3.064,0,0,0,3.065,3.065h17.72a3.064,3.064,0,0,0,3.065-3.065V3.065A3.069,3.069,0,0,0,112.827,0M99.6,1.866h8.743c.223,0,.4.33.4.734s-.181.743-.4.743H99.6c-.227,0-.4-.33-.4-.743s.172-.734.4-.734m4.375,37.216a1.956,1.956,0,1,1,1.947-1.955,1.964,1.964,0,0,1-1.947,1.955m9.62-6.706H94.341V5.179H113.59Z" transform="translate(-92.042 -0.218)" fill="#efa211"/>
+                                        </g>
+                                        </svg>
+                                    <svg id="work_AI_icon" xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 40">
+                                        <path id="Path_1464" data-name="Path 1464" d="M35.789,39.191l-31.826.251A3.694,3.694,0,0,1,.251,35.789L0,3.963A3.694,3.694,0,0,1,3.654.252L35.48,0a3.694,3.694,0,0,1,3.711,3.654l.251,31.826a3.693,3.693,0,0,1-3.654,3.712" transform="translate(0.279 0.279)" fill="#efa211"/>
+                                        <rect id="Rectangle_1738" data-name="Rectangle 1738" width="40" height="40" transform="translate(0)" fill="none"/>
+                                        <g id="AI" transform="translate(8 7)">
+                                        <text id="A" transform="translate(0.166 21.134) rotate(-0.452)" fill="#fff" font-size="23" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">A</tspan></text>
+                                        <text id="i" transform="matrix(1, -0.008, 0.008, 1, 17.489, 21.047)" fill="#fff" font-size="23" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">i</tspan></text>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" d-flex flex-wrap-reverse row mb-5">
+                            <div class="col-md-4 mobile-margin-bottom d-flex flex-column justify-content-evenly">
+                                <h3>葉黃素商品LandingPage</h3>
+                                <p class="normal-text">此專案為大學光集團之葉黃素產品之活動網頁，設計上走比較簡約的風格，更能強調商品的特色。
+                                </p>
+                                <div class="d-flex justify-content-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49" height="49" viewBox="0 0 49 49">
+                                        <defs>
+                                        <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 100 100">
+                                            <image width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QA/wD/AP+gvaeTAAAGVUlEQVR4nO2dW2gcVRjH/9/Zrb0ogpSm2WR3a6qVqi9Sq4JaH4QIRUVBiFBJNgkFHwpFQbBK1RUtqAgtPrSoxTZpG6qi4osP0iJovYCtoq0FJZqks5fU2qZK2qQmM58PiTW77mz2cmbmnNnze1vOme98Oz/OZc7OzAIGg8FgMBgMBvlQ0Al4RaavdSmAGwiiiRhjdoRzic7MYNB5zUeohPBniOateA+x6GHwHQBEUY0RBr0fXRB9ffmGodOBJDkPoRGS27diDRz7AECrK6g+TsDTsZS10/PEqiQUQrL9yQeJ+SCAJVUdSNgV67Q2EYG9yax6tBeS2dN6ixDiCIArawpA2NrSZW2Tm1XtaC2EP0M0fyp+vMJhyg2HIda2pka+l5ZYHYj5q6hL3or31CkDAATBeUVKQhLQWggz9UoK1Z7Z3xqXFKsutBWSf6d5GQG3SwpHwo7cLylWXWgrhChyHSTmz+DrZcWqB22F2CSaZMYjULPMeLWirRDB/JfMeAQ+LzNerWgrZDqKjMx4TJSVGa9WtBUyu1E4JC8iH5IXq3a0FQIADHwgKdRQrNM6JilWXWgtRNhTrwGQMJfw86rsZ2ktJNY7eoaAZ+qJQeDDsaHMgKyc6kVrIQAQS1k7QdhV29H08/QUOigNR25WtaO9EACIdVqbQNgKVH5iCXzYnnLuTGzMnPMwtaoJhRAicEuXtY0h1gL4FCg7HwyBqKt5KHOfajIAzbff3cjsb40Lh9aDaTWIlhPz2Mx1Bh+KdVrHVJnADQaDwWAwGAx+ofSylxmU35e4FQ61M7iVCCV+lKJLBD7PoBM2nK8TqcyP/mcqDyWFcBoi3xbfAKIXwVhZ5eG/AtgZXTz5VlPHmXEv8vMS5YSMHEhes2CK3wWhvc5QWRBvbunKfCglMZ9QSsisjCMg3CQtKGNHbIn1FHXAlhbTQ5TZy+I0xGzPkCcDAAhP5C4mdnNane9aDmWSzK9MPiZhmCoJEbrz1yae9SK2bJQQwgwCOO1pI4R0rj95t6dtSEAJIaP98dtqWE1VSwTM/b+/t+wqj9upCyWEMIl7fWqqbfriopd8aqsmlBACcNK3pgibc3sT9/jWXpUoIYQZS31sToCwO/dmS3VPW/mEEkLI/+uhVVgYUeapqbkoISQQFB26GlfIzNC1V7VVVyMImShTptyqK/xCiD4B4wv3crWGrvALYXYccjbCvacoNXSFXwiAeCr7CxGeK1NFmaGrIYQAQPNv1nYdhq6GEUJpaDF0NYwQoMKha2Lx9tH+5bW9pkMCDSUEAJoXWTsA/sq9Bm90+IqRfF8y5V9W/9FwQqgDtqBIuV4CAEsZvDfbl0z7kdNcGk4IADiwK3omncAv5Pvi673OZy4NKYRs5Cqty0wve5lLMQ0ppHkk8zkD31RUmbBmtH9Fm8cpXaYhhVAaDsN5AEAfCH/OV59h3+hDWgCAqF8NqUY8lT0LoPvfz9m+xKMEHCxdW/i2DG7IHlIKQaTEk7hGiGKoIuRiVbUZ3zGjl4A9HuUTGEoIIcK3VdXnyCOt3daeWMrqBXDUo7QCQQkh5xZd/TYqlzIR6xkevvyJcNKTpAJCCSE3d/z094XzC9eB6MmyW+QzFL5ojHnMu8z8R5ll76rNg5cA7Mj3J7PMvK5M1YK3LxAwFqa3ACjRQ6qkoEcwi1D1EO2EEBcKgYAREiRcJEAUC9Ic7YTAKZxDbCMkWEgUrqpE1AgJFKeoR0SZjJAgoaJV1vi0ERIoxJECAW09w5MAJgNKRzraCXEiJeeM0PQS7YT87zoEAEK00tJOSNQuMWeQERIYF4o3FwEwwrPBqJuQidlJvIDilZfOaCXE9cSbISsY2EVImHZ8tRICFyHEUO4N1bWilRCCy4kP0Ra8VkLchqwwbcErJ4SJp9wLS5/4ebbg3ePNDe04rjfKlSuTjXJCbPAJ91IuecvPgiUTP8DtxBMdr6RdYjrlXiqGK4khA+WEJDozg8Ql7rFlnMQl56NSxzR1nBkH440Sx5xGdHp3Je02d1tHAXxZouhIS/cp3/6fSjkhADDJkR4CvwrwCICzAAambbS3PJ5zvcMxtsLawqAtBAxi5mr+4whwV8uG3B+VtEkEduA8BGAAM7vHkwAGHDgP1/+NDHXBaQhdXpppMBgMBoPBYDAYDIaQ8Q+5af0LGrsToQAAAABJRU5ErkJggg=="/>
+                                        </pattern>
+                                        </defs>
+                                        <rect id="work_oldman_icon" width="49" height="49" fill="url(#pattern)"/>
+                                    </svg>
+                                        <svg id="work_PC_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46.207" height="43.576" viewBox="0 0 46.207 43.576">
+                                        <defs>
+                                            <clipPath id="clip-path">
+                                            <rect id="Rectangle_1740" data-name="Rectangle 1740" width="46.207" height="43.576" fill="#efa211"/>
+                                            </clipPath>
+                                        </defs>
+                                        <g id="Group_4913" data-name="Group 4913" transform="translate(0 0)" clip-path="url(#clip-path)">
+                                            <path id="Path_1468" data-name="Path 1468" d="M42.452,1.026H3.778A3.782,3.782,0,0,0,0,4.8V31.05a3.782,3.782,0,0,0,3.778,3.777H16.742v5.064H14.7a2.323,2.323,0,1,0,0,4.646H31.535a2.323,2.323,0,1,0,0-4.646H29.49V34.828H42.452a3.782,3.782,0,0,0,3.777-3.777V4.8a3.782,3.782,0,0,0-3.777-3.778M36.934,32.505a1.052,1.052,0,1,1,1.051-1.052,1.05,1.05,0,0,1-1.051,1.052m4.646.252a1.3,1.3,0,1,1,1.3-1.3,1.3,1.3,0,0,1-1.3,1.3m1.551-3.926H3.1V4.8a.681.681,0,0,1,.681-.68H42.452a.681.681,0,0,1,.68.68Z" transform="translate(0 -1.026)" fill="#efa211"/>
+                                        </g>
+                                        </svg>
+                                        <svg id="work_MB_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.859" height="41" viewBox="0 0 24.859 41.98">
+                                        <defs>
+                                            <clipPath id="clip-path">
+                                            <rect id="Rectangle_1741" data-name="Rectangle 1741" width="24.859" height="46" fill="#efa211"/>
+                                            </clipPath>
+                                        </defs>
+                                        <g id="Group_4915" data-name="Group 4915" clip-path="url(#clip-path)">
+                                            <path id="Path_1469" data-name="Path 1469" d="M112.827,0H95.107a3.069,3.069,0,0,0-3.065,3.065v35.98a3.064,3.064,0,0,0,3.065,3.065h17.72a3.064,3.064,0,0,0,3.065-3.065V3.065A3.069,3.069,0,0,0,112.827,0M99.6,1.866h8.743c.223,0,.4.33.4.734s-.181.743-.4.743H99.6c-.227,0-.4-.33-.4-.743s.172-.734.4-.734m4.375,37.216a1.956,1.956,0,1,1,1.947-1.955,1.964,1.964,0,0,1-1.947,1.955m9.62-6.706H94.341V5.179H113.59Z" transform="translate(-92.042 -0.218)" fill="#efa211"/>
+                                        </g>
+                                        </svg>
+                                        <svg id="work_XD_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 40 40">
+                                        <defs>
+                                            <clipPath id="clip-path">
+                                            <rect id="Rectangle_1742" data-name="Rectangle 1742" width="40" height="40" fill="#efa211"/>
+                                            </clipPath>
+                                        </defs>
+                                        <g id="Group_4918" data-name="Group 4918" clip-path="url(#clip-path)">
+                                            <path id="Path_1470" data-name="Path 1470" d="M35.645,39.342H3.7a3.708,3.708,0,0,1-3.7-3.7V3.7A3.708,3.708,0,0,1,3.7,0H35.645a3.708,3.708,0,0,1,3.7,3.7V35.645a3.708,3.708,0,0,1-3.7,3.7" transform="translate(0.329 0.329)" fill="#efa211"/>
+                                        </g>
+                                        <g id="Group_7377" data-name="Group 7377" transform="translate(6 8)">
+                                            <text id="d" transform="translate(15.052 21)" fill="#fff" font-size="23" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">d</tspan></text>
+                                            <text id="X" transform="translate(0 21.516)" fill="#fff" font-size="23" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">X</tspan></text>
+                                        </g>
+                                        </svg>
+                                </div>
+                            </div>
+                            <div class="col-md-8 mobile-margin-bottom ">
+                                <a href="portfolio-design04.html" class="bannerHeigh">
+                                    <img src="./images.html/workPC_MockUp_img02.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class=" d-flex row mb-5">
+                            <div class="col-md-8 mobile-margin-bottom">
+                                <a href="portfolio-design03.html" class="bannerHeigh">
+                                    <img src="./images.html/workPC_MockUp_img03.png" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-4 mobile-margin-bottom d-flex flex-column justify-content-evenly">
+                                <h3>飛騰雲端打卡系統 Redesign</h3>
+                                <p class="normal-text">因原本的打卡系統無論在介面或是操作上比較不易學習，故規劃了一整套的ＵＩ。</p>
+                                <div class="d-flex justify-content-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="45" viewBox="0 0 40 45">
+                                        <defs>
+                                        <clipPath id="clip-path">
+                                            <rect id="Rectangle_1739" data-name="Rectangle 1739" width="40" height="45" fill="#efa211"/>
+                                        </clipPath>
+                                        </defs>
+                                        <g id="work_adult_icon" clip-path="url(#clip-path)">
+                                        <path id="Path_1465" data-name="Path 1465" d="M0,41.82a6.076,6.076,0,0,1,2.971-2.634c3.1-1.475,6.2-2.957,9.314-4.425a1.455,1.455,0,0,1,2.046.789c.579,1.29,1.086,2.612,1.653,3.908.692,1.583,1.415,3.153,2.232,4.685q.071-1.111.142-2.22c.036-.574.092-1.146.107-1.721a4.319,4.319,0,0,0-.4-2.391c-.576-1.016-1.017-2.112-1.511-3.175-.378-.811-.015-1.419.846-1.42q2.549,0,5.1,0c.84,0,1.206.585.853,1.371-.573,1.276-1.172,2.54-1.722,3.827a2.624,2.624,0,0,0-.2,1.1c.063,1.574.171,3.145.269,4.826.292-.583.58-1.089.808-1.621,1-2.34,1.985-4.691,2.988-7.031a1.58,1.58,0,0,1,2.253-.913q2.333,1.054,4.644,2.159c1.561.744,3.12,1.494,4.664,2.276a5.854,5.854,0,0,1,2.358,1.84A11.143,11.143,0,0,1,40,42.169V51.82H0Z" transform="translate(0 -6.936)" fill="#efa211"/>
+                                        <path id="Path_1466" data-name="Path 1466" d="M23.589,0a1.565,1.565,0,0,0,.4.112,8.668,8.668,0,0,1,5.358,1.752,6.961,6.961,0,0,1,2.621,4.188,10.476,10.476,0,0,1-.177,4.093c-.082.464-.17.929-.227,1.4a.491.491,0,0,0,.146.333,2.853,2.853,0,0,1,.571,2.475,3.243,3.243,0,0,1-.315,1.191,3.367,3.367,0,0,1-.907,1.07,1.845,1.845,0,0,0-.81,1.074A7.668,7.668,0,0,1,24.085,23.6a6.253,6.253,0,0,1-5.331-1.523,7.859,7.859,0,0,1-2.9-4.722,1.09,1.09,0,0,0-.585-.6A2.384,2.384,0,0,1,13.967,14.6a13.926,13.926,0,0,1,0-1.748.722.722,0,0,1,.146-.478c.845-.723.365-1.592.22-2.377a8.383,8.383,0,0,1,.982-6.515A7.512,7.512,0,0,1,20.07.365,18.983,18.983,0,0,1,22.282.112,1.208,1.208,0,0,0,22.569,0Z" transform="translate(-3.192 0)" fill="#efa211"/>
+                                        <path id="Path_1467" data-name="Path 1467" d="M0,56.731H40a2.4,2.4,0,0,1-.51.112q-12.662.008-25.326,0-6.857,0-13.711,0A1.937,1.937,0,0,1,0,56.731" transform="translate(0 -11.847)" fill="#efa211"/>
+                                        </g>
+                                    </svg>
+                                        <svg id="work_PC_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46.207" height="43.576" viewBox="0 0 46.207 43.576">
+                                        <defs>
+                                            <clipPath id="clip-path">
+                                            <rect id="Rectangle_1740" data-name="Rectangle 1740" width="46.207" height="43.576" fill="#efa211"/>
+                                            </clipPath>
+                                        </defs>
+                                        <g id="Group_4913" data-name="Group 4913" transform="translate(0 0)" clip-path="url(#clip-path)">
+                                            <path id="Path_1468" data-name="Path 1468" d="M42.452,1.026H3.778A3.782,3.782,0,0,0,0,4.8V31.05a3.782,3.782,0,0,0,3.778,3.777H16.742v5.064H14.7a2.323,2.323,0,1,0,0,4.646H31.535a2.323,2.323,0,1,0,0-4.646H29.49V34.828H42.452a3.782,3.782,0,0,0,3.777-3.777V4.8a3.782,3.782,0,0,0-3.777-3.778M36.934,32.505a1.052,1.052,0,1,1,1.051-1.052,1.05,1.05,0,0,1-1.051,1.052m4.646.252a1.3,1.3,0,1,1,1.3-1.3,1.3,1.3,0,0,1-1.3,1.3m1.551-3.926H3.1V4.8a.681.681,0,0,1,.681-.68H42.452a.681.681,0,0,1,.68.68Z" transform="translate(0 -1.026)" fill="#efa211"/>
+                                        </g>
+                                        </svg>
+                                        <svg id="work_MB_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.859" height="46" viewBox="0 0 24.859 41.98">
+                                        <defs>
+                                            <clipPath id="clip-path">
+                                            <rect id="Rectangle_1741" data-name="Rectangle 1741" width="24.859" height="41" fill="#efa211"/>
+                                            </clipPath>
+                                        </defs>
+                                        <g id="Group_4915" data-name="Group 4915" clip-path="url(#clip-path)">
+                                            <path id="Path_1469" data-name="Path 1469" d="M112.827,0H95.107a3.069,3.069,0,0,0-3.065,3.065v35.98a3.064,3.064,0,0,0,3.065,3.065h17.72a3.064,3.064,0,0,0,3.065-3.065V3.065A3.069,3.069,0,0,0,112.827,0M99.6,1.866h8.743c.223,0,.4.33.4.734s-.181.743-.4.743H99.6c-.227,0-.4-.33-.4-.743s.172-.734.4-.734m4.375,37.216a1.956,1.956,0,1,1,1.947-1.955,1.964,1.964,0,0,1-1.947,1.955m9.62-6.706H94.341V5.179H113.59Z" transform="translate(-92.042 -0.218)" fill="#efa211"/>
+                                        </g>
+                                        </svg>
+                                        <svg id="work_XD_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 40 40">
+                                        <defs>
+                                            <clipPath id="clip-path">
+                                            <rect id="Rectangle_1742" data-name="Rectangle 1742" width="40" height="40" fill="#efa211"/>
+                                            </clipPath>
+                                        </defs>
+                                        <g id="Group_4918" data-name="Group 4918" clip-path="url(#clip-path)">
+                                            <path id="Path_1470" data-name="Path 1470" d="M35.645,39.342H3.7a3.708,3.708,0,0,1-3.7-3.7V3.7A3.708,3.708,0,0,1,3.7,0H35.645a3.708,3.708,0,0,1,3.7,3.7V35.645a3.708,3.708,0,0,1-3.7,3.7" transform="translate(0.329 0.329)" fill="#efa211"/>
+                                        </g>
+                                        <g id="Group_7377" data-name="Group 7377" transform="translate(6 8)">
+                                            <text id="d" transform="translate(15.052 21)" fill="#fff" font-size="23" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">d</tspan></text>
+                                            <text id="X" transform="translate(0 21.516)" fill="#fff" font-size="23" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">X</tspan></text>
+                                        </g>
+                                        </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" d-flex flex-wrap-reverse row mb-5">
+                            <div class="col-md-4 mobile-margin-bottom d-flex flex-column justify-content-evenly">
+                                <h3>挑戰0度數活動網頁</h3>
+                                <p class="normal-text">配合族群以學童為主，走可愛風趣的風格此專案在規劃時間，還在學習新軟體，所以採用比較非正規的設計方式。</p>
+                                <div class="d-flex justify-content-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46.678" height="46.42" viewBox="0 0 46.678 46.42">
+                                        <defs>
+                                        <clipPath id="clip-path">
+                                            <rect id="Rectangle_3714" data-name="Rectangle 3714" width="46.678" height="46.42" fill="#efa211"/>
+                                        </clipPath>
+                                        </defs>
+                                        <g id="work_family_icon" clip-path="url(#clip-path)">
+                                        <path id="Path_6831" data-name="Path 6831" d="M156.634,0a5.53,5.53,0,0,1,5.605,5.544A5.57,5.57,0,0,1,151.1,5.6,5.5,5.5,0,0,1,156.634,0" transform="translate(-122.853 -0.001)" fill="#efa211"/>
+                                        <path id="Path_6832" data-name="Path 6832" d="M44.986.007A5.493,5.493,0,0,1,50.44,5.682,5.57,5.57,0,1,1,44.986.007" transform="translate(-31.954 -0.005)" fill="#efa211"/>
+                                        <path id="Path_6833" data-name="Path 6833" d="M149.752,70.659c-1.562-1.567-3.142-3.115-4.7-4.686a5.294,5.294,0,0,0-3.951-1.606c-2.181.008-4.362-.008-6.543,0a7.119,7.119,0,0,0-1.3.129c-2.413.462-3.5,2.6-5.316,4.061,3.165.719,4.815,2.573,5.116,5.659,1.978-.743,3.492-.376,4.4,1.007.928,1.407.669,2.893-.763,4.352-.982,1-2.005,1.965-2.929,3.017a2.484,2.484,0,0,0-.592,1.45c-.062,2.273-.013,4.548-.032,6.823s-.088,4.543-.088,6.815a1.063,1.063,0,0,0,.468.771,2.309,2.309,0,0,0,3.421-2.1c.053-2.678.014-5.359.022-8.038,0-.391.047-.783.071-1.165h1.616v1.09c0,2.648-.012,5.3.006,7.945a2.366,2.366,0,1,0,4.715-.077c.018-2.648,0-5.3.008-7.945,0-.331.031-.663.053-1.1h2.936c-.992-5.3-1.962-10.472-2.932-15.647l.263-.174c.9.935,1.782,1.885,2.7,2.8a2.4,2.4,0,0,0,3.625.167c.983-1.019.881-2.387-.284-3.555" transform="translate(-104.028 -52.333)" fill="#efa211"/>
+                                        <path id="Path_6834" data-name="Path 6834" d="M17.531,96.083c0-3.8-.053-7.6.03-11.4a3.745,3.745,0,0,0-1.173-2.848c-1.4-1.52-3.171-2.6-3.514-4.874a3.119,3.119,0,0,1,1.118-2.619,3.355,3.355,0,0,1,3.714-.219,5.9,5.9,0,0,1,4.987-5.7c-.955-.967-1.822-1.858-2.7-2.734a4.993,4.993,0,0,0-3.63-1.46c-2.306-.011-4.617-.1-6.914.036a5.2,5.2,0,0,0-2.941.949c-2.095,1.8-4.028,3.8-5.947,5.8A2.117,2.117,0,0,0,.67,74a2.39,2.39,0,0,0,3.115.434c.242-.152,3.4-3.538,3.4-3.538a2.239,2.239,0,0,1,.142.52,5.169,5.169,0,0,1,.019.84q.007,11.637.02,23.274A5.56,5.56,0,0,0,7.529,97a2.207,2.207,0,0,0,2.189,1.57,2.184,2.184,0,0,0,2.2-1.541,4.5,4.5,0,0,0,.162-1.286c.012-3.864.007-7.727.007-11.591,0-.09-.009-.184-.017-.279a.985.985,0,0,1,.987-.935.919.919,0,0,1,.732.983l0,0c-.009.1-.017.2-.017.3,0,3.926-.01,7.852.007,11.778A2.307,2.307,0,0,0,16.3,98.567c1.084-.056,1.367-.394,1.255-1.457a9.792,9.792,0,0,1-.026-1.027" transform="translate(0 -52.192)" fill="#efa211"/>
+                                        <path id="Path_6835" data-name="Path 6835" d="M93.889,125.038a1.831,1.831,0,0,0,.506-1.69c-.189-1.012-1.385-1.328-1.385-1.328a1.6,1.6,0,0,0-1.273.1,1.82,1.82,0,0,0-.632.5l-1.426,1.471h0c-1.171,1.217-2.28,2.49-4.124,2.671-2.108.206-3.4-1.184-4.574-2.342l-1.661-1.637c-.093-.108-.185-.216-.272-.322a.77.77,0,0,0-.358-.27,1.682,1.682,0,0,0-2.2.262.913.913,0,0,0-.083.1,1.335,1.335,0,0,0-.119.181c-.836,1.092.65,2.834.65,2.834l.557.589c.11.127.227.25.35.37l.3.315.039.006a20.547,20.547,0,0,1,1.943,2.027,2.549,2.549,0,0,1,.58,1.456c.045,4.359.021,8.719.029,13.08a1.9,1.9,0,0,0,1.992,2.086,1.856,1.856,0,0,0,1.9-2.061c.015-1.651-.023-3.3.027-4.951.011-.365-.066-1.029.454-1.029.614,0,.5.64.5,1.06.023,1.65-.008,3.3.016,4.951a1.939,1.939,0,0,0,2.336,2c1.051-.169,1.606-.929,1.609-2.271.008-4.236.024-8.471-.015-12.706a2.332,2.332,0,0,1,.792-1.871q1.823-1.742,3.544-3.59" transform="translate(-61.814 -99.124)" fill="#efa211"/>
+                                        <path id="Path_6836" data-name="Path 6836" d="M101.868,98.775a4.3,4.3,0,1,0,4.3-4.3,4.3,4.3,0,0,0-4.3,4.3" transform="translate(-82.824 -76.813)" fill="#efa211"/>
+                                        </g>
+                                    </svg>
+                                    
+                                        <svg id="work_PC_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46.207" height="43.576" viewBox="0 0 46.207 43.576">
+                                        <defs>
+                                            <clipPath id="clip-path">
+                                            <rect id="Rectangle_1740" data-name="Rectangle 1740" width="46.207" height="43.576" fill="#efa211"/>
+                                            </clipPath>
+                                        </defs>
+                                        <g id="Group_4913" data-name="Group 4913" transform="translate(0 0)" clip-path="url(#clip-path)">
+                                            <path id="Path_1468" data-name="Path 1468" d="M42.452,1.026H3.778A3.782,3.782,0,0,0,0,4.8V31.05a3.782,3.782,0,0,0,3.778,3.777H16.742v5.064H14.7a2.323,2.323,0,1,0,0,4.646H31.535a2.323,2.323,0,1,0,0-4.646H29.49V34.828H42.452a3.782,3.782,0,0,0,3.777-3.777V4.8a3.782,3.782,0,0,0-3.777-3.778M36.934,32.505a1.052,1.052,0,1,1,1.051-1.052,1.05,1.05,0,0,1-1.051,1.052m4.646.252a1.3,1.3,0,1,1,1.3-1.3,1.3,1.3,0,0,1-1.3,1.3m1.551-3.926H3.1V4.8a.681.681,0,0,1,.681-.68H42.452a.681.681,0,0,1,.68.68Z" transform="translate(0 -1.026)" fill="#efa211"/>
+                                        </g>
+                                        </svg>
+                                        <svg id="work_MB_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.859" height="46" viewBox="0 0 24.859 41.98">
+                                        <defs>
+                                            <clipPath id="clip-path">
+                                            <rect id="Rectangle_1741" data-name="Rectangle 1741" width="24.859" height="41.98" fill="#efa211"/>
+                                            </clipPath>
+                                        </defs>
+                                        <g id="Group_4915" data-name="Group 4915" clip-path="url(#clip-path)">
+                                            <path id="Path_1469" data-name="Path 1469" d="M112.827,0H95.107a3.069,3.069,0,0,0-3.065,3.065v35.98a3.064,3.064,0,0,0,3.065,3.065h17.72a3.064,3.064,0,0,0,3.065-3.065V3.065A3.069,3.069,0,0,0,112.827,0M99.6,1.866h8.743c.223,0,.4.33.4.734s-.181.743-.4.743H99.6c-.227,0-.4-.33-.4-.743s.172-.734.4-.734m4.375,37.216a1.956,1.956,0,1,1,1.947-1.955,1.964,1.964,0,0,1-1.947,1.955m9.62-6.706H94.341V5.179H113.59Z" transform="translate(-92.042 -0.218)" fill="#efa211"/>
+                                        </g>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+                                            <g id="work_AI_icon" transform="translate(0 0)">
+                                            <path id="Path_1464" data-name="Path 1464" d="M35.789,39.191l-31.826.251A3.694,3.694,0,0,1,.251,35.789L0,3.963A3.694,3.694,0,0,1,3.654.252L35.48,0a3.694,3.694,0,0,1,3.711,3.654l.251,31.826a3.693,3.693,0,0,1-3.654,3.712" transform="translate(0 0)" fill="#efa211"/>
+                                            <rect id="Rectangle_1738" data-name="Rectangle 1738" width="40" height="40" transform="translate(0)" fill="none"/>
+                                            <g id="AI" transform="translate(7 5)">
+                                                <text id="A" transform="translate(0.189 24.149) rotate(-0.452)" fill="#fff" font-size="26" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">A</tspan></text>
+                                                <text id="i" transform="matrix(1, -0.008, 0.008, 1, 19.513, 24.382)" fill="#fff" font-size="24" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">i</tspan></text>
+                                            </g>
+                                            </g>
+                                        </svg>
+                                </div>
+                            </div>
+                            <div class="col-md-8 mobile-margin-bottom">
+                                <a href="portfolio-design05.html" class="bannerHeigh">
+                                    <img src="./images.html/workPC_MockUp_img04.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class=" d-flex row mb-5">
+                            <div class="col-md-6 mb-4">
+                                <div>
+                                    <img src="./images.html/workPC_MockUp_img05.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div>
+                                    <img src="./images.html/workPC_MockUp_img06.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="FooterScreen" id="contactMe">
+            <div class="myCardText">
+                <p>Thanks for your watching</p>
+                <p>If you are interested in my work</p>
+                <p>Please contect me with  <a target="_blank" href="mailto:jassica4060@gmail.com">jassica4060@gmail.com</a></p>
+            </div>
+            <div class="myCardImg text-center">
+                <img src="./images.html/my_card.png" alt="">
+                <a class="DownloadBtn" target="_blank" download href="file/Huang Szu Min-CV.pdf">
+                    Download CV</a>
+            </div>
+        </div>
+    </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script>
+    // $('.BtnList').mouseenter(() => {
+    //     $(this).css()
+    // })
+    $('.moreBtn' ).click(() => {
+        showMore()
+    })
+
+    $('.circleBtn.green').click(() => {
+        showMore()
+    })
+
+    let showMore = function (){
+        $('.moreBtn').fadeOut()
+        $('.hiddenContent').slideDown()
+        $('.circleBtn.green').removeClass('green').addClass('yellow')
+    }
+
+    $('.linktoBtn').click(function(e){
+        e.preventDefault()
+        let link = $(this).attr('href')
+        let offset = $(`#${link}`).offset().top
+
+        document.getElementsByClassName('bodyWrap')[0].style.overflow = "unset"
+        document.getElementsByClassName('bodyWrap')[0].style.height = "auto"
+        
+        let body = $("html, body");
+        body.stop().animate({scrollTop:offset}, 500, 'swing', function() { 
+        });
+        
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Min Design04</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/allStyle.css">
+    <style>
+        svg{
+            width: 40px;
+            height: 40px;
+        }
+        .heighContent{
+            height: 80vh;
+        }
+        .white-text{
+            color: #FFFFFF;
+        }
+        body{
+            color:#717171;
+            background: #FFFFFF;
+            width: 100vw;
+            overflow-x: hidden;
+        }
+
+        .mobile-width{
+            width: 100px;
+        }
+        .mainScreen{
+            position: relative;
+            width: 100%;
+            background: url(./images_02/PCjumbotron_bg-03.png) 50% 50% no-repeat;
+            background-size: cover;
+        }
+
+        .mainWrap{
+            width: 100%;
+            height: 60vh;
+        }
+
+        .mainTitle{
+            position: absolute;
+            left: 15%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .mainTitle p,.mainTitle h3 {
+            text-shadow: 0px 0px 10px #1B1737BA;
+            color: #FFFFFF;
+        }
+        .goBackText{
+            text-shadow: 0px 0px 10px #1B1737BA;
+            color: #FFFFFF;
+            font-size: larger;
+        }
+
+        .videoImg{
+            position: absolute;
+            right: 5%;
+            bottom: -20%;
+            width: 50%;
+            border-radius: 25px;
+            box-shadow: 0px 0px 15px -1.7px #8f8b8dba;
+        }
+
+        .secondVideoImg{
+            bottom: -65%;
+            right: -20px;
+            width: 32%;
+            border-radius: 25px;
+            box-shadow: 0px 0px 15px -1.7px #c3b2bbba;
+        }
+
+        video{
+            position: absolute;
+            top: 50px;
+        }
+
+        .myContainer{
+            margin:7% auto 0 auto;
+            padding:7%;
+            width: 84%;
+        }
+        .ViewProjectBtn{
+            padding: 10px 35px;
+            border: 1px solid #FFB31D;
+            color: #FFB31D;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+        .yellowLine{
+            position: relative;
+        }
+
+        .yellowLine::before{
+            content:'';
+            position: absolute;
+            left: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height:1px;
+            background:#FFB31D;
+        }
+
+        .ProjectImgLeft{
+            position: absolute;
+            width: 750px;
+            left: -400px;
+            top: -85px;
+        }
+
+        .ProjectImgRight{
+            position: absolute;
+            width: 900px;
+            Right: -400px;
+            top: -85px;
+        }
+
+        .margin-bottom-lv1{
+            margin-bottom: 120px;
+        }
+
+        .timeLine{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            color:#717171;
+        }
+
+        .timeLine::after{
+            position: absolute;
+            content:'';
+            width: 100%;
+            height: 1px;
+            background:#717171;
+            top:37px;
+
+        }
+
+        .timeLineCircle{
+            position: relative;
+            padding-bottom: 30px;
+            height:54px;
+        }
+
+        .timeLineCircle::after{
+            position: absolute;
+            content:"";
+            left: 0;
+            top: 32px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            z-index: 10;
+            background:#FCFCFC;
+            border:1px solid #717171;
+        }
+
+      
+        @media screen and (max-width:800px){
+            .mobile-width{
+                width: auto;
+            }
+            .videoImg{
+                display: none;
+            }
+
+            .mainWrap{
+                width: 100%;
+                height: 200px;
+            }
+
+            .ProjectImgRight,.ProjectImgLeft{
+                position: unset;
+                width: 100%;
+            }
+
+            .ProjectImgLeft{
+                margin-left: -60px;
+            }
+
+            .ProjectImgRight{
+                margin-left: 60px;
+            }
+
+            .mobile-margin{
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .myContainer{
+                width: 100%;
+            }
+
+            .heighContent{
+                height: auto;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .myContainer{
+                padding:20px 60px !important;
+            }
+            .iconGroup{
+                margin-bottom: 50px;
+            }
+
+            .col-md-4:last-of-type .iconGroup{
+                margin-bottom: 50px;
+            }
+            .margin-bottom-lv1{
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="mainScreen">
+    <div class="mainWrap">
+        <div class="mainTitle">
+            <h3>葉黃素活動網頁</h3>
+            <p>Online Ｗeb design</p>
+        </div>
+        <div class="videoImg">
+            <img src="./images_02/web_img_03_1.png" alt="">
+            <div class="position-absolute secondVideoImg">
+                <img src="./images_02/mobile-3.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="myContainer pt-0">
+    <div class="d-flex row heighContent flex-column">
+        <div class="col-md-6">
+            <p class="yellow-text yellowLine">Project</p>
+            <p class="normal-text mb-5">此專案為大學光集團之葉黃素產品之活動網頁，設計上走比較簡約的風格，更能強調商品的特色。
+            </p>
+        </div>
+        <div class="col-md-6">
+            <p class="yellow-text yellowLine">Design</p>
+            <p class="normal-text mb-5">此專案因高級的考慮金愛爾明主色調所以採用黃色與金色呈現比較高級的感覺，背景與卡片分頁的色調上也採比較柔和的金色色調。</p>
+        </div>
+    </div> 
+</div> 
+    <div>
+        <img src="./images_02/web_img_03_2.png" alt="">
+    </div>
+<div class="myContainer">
+    <div class=" heighContent">
+        <div class="d-flex row margin-bottom-lv1">
+            <div class="col-md-4">
+                <p class="yellow-text yellowLine">User Group</p>
+                <div class="iconGroup d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52.118" height="54.09" viewBox="0 0 52.118 54.09">
+                        <defs>
+                          <clipPath id="clip-path">
+                            <rect id="Rectangle_2695" data-name="Rectangle 2695" width="52.118" height="54.09" transform="translate(0 0)" fill="none"/>
+                          </clipPath>
+                          <clipPath id="clip-path-2">
+                            <rect id="Rectangle_2696" data-name="Rectangle 2696" width="52.118" height="54.09" transform="translate(0 0)" fill="#717171"/>
+                          </clipPath>
+                        </defs>
+                        <g id="User_old_icon" transform="translate(0 0)">
+                          <g id="Group_6147" data-name="Group 6147">
+                            <g id="Group_6146" data-name="Group 6146" clip-path="url(#clip-path)">
+                              <path id="Path_3552" data-name="Path 3552" d="M21.514,6.622A4.622,4.622,0,1,1,16.892,2a4.622,4.622,0,0,1,4.622,4.622" fill="#717171"/>
+                            </g>
+                          </g>
+                          <g id="Group_6149" data-name="Group 6149">
+                            <g id="Group_6148" data-name="Group 6148" clip-path="url(#clip-path-2)">
+                              <path id="Path_3553" data-name="Path 3553" d="M43.057,4.787A4.787,4.787,0,1,1,38.27,0a4.787,4.787,0,0,1,4.787,4.786" fill="#717171"/>
+                              <path id="Path_3554" data-name="Path 3554" d="M49.637,29.047V13.526a5.345,5.345,0,0,0-5.343-5.3H43.268a6.066,6.066,0,0,1-10,0H32.31a5.376,5.376,0,0,0-5.405,5.3v4.161c-.468-1.317-.9-2.541-1.237-3.525-.83-2.415-2.122-3.849-3.849-4.285a5.9,5.9,0,0,1-9.859-.011c-1.75.422-3.056,1.861-3.893,4.3-1.4,4.07-4.385,12.266-5.029,14.031a3.362,3.362,0,0,0-3,3.338v2.855a1.1,1.1,0,0,0,1,1.1,1.072,1.072,0,0,0,1.143-1.069V31.531a1.217,1.217,0,0,1,.892-1.17,2.159,2.159,0,0,0,1.139.962,2.266,2.266,0,0,0,.394.1c0,.035.006.07.006.1V52.982a1.1,1.1,0,0,0,1,1.106,1.072,1.072,0,0,0,1.143-1.069V31.531a3.351,3.351,0,0,0-.115-.871A2.185,2.185,0,0,0,7,30.027c.03-.083,2.581-7.063,4.324-12l-3.09,16.2a1.21,1.21,0,0,0,1.186,1.44h1.66V51.4a2.659,2.659,0,0,0,2.662,2.669A2.612,2.612,0,0,0,16.3,51.457V35.674h1.127V51.4a2.659,2.659,0,0,0,2.662,2.669,2.612,2.612,0,0,0,2.56-2.611V35.674h1.66a1.209,1.209,0,0,0,1.187-1.44l-3.091-16.2s2.239,6.106,4.518,12.312a2.309,2.309,0,0,0,4.476-.8v-16a.907.907,0,0,1,.91-.816V51.295a2.751,2.751,0,0,0,2.752,2.762,2.7,2.7,0,0,0,2.648-2.7V29.784h1.165V51.3a2.747,2.747,0,0,0,2.761,2.76,2.691,2.691,0,0,0,2.627-2.7V12.729a.872.872,0,0,1,.872.816V30.062a2.239,2.239,0,0,0,.374,1.24,3.345,3.345,0,0,0-.146.976v20.7a1.1,1.1,0,0,0,1,1.1,1.07,1.07,0,0,0,1.143-1.069V32.305a2.242,2.242,0,0,0,1.805-1.088,1.214,1.214,0,0,1,.625,1.061v2.854a1.1,1.1,0,0,0,1,1.1,1.07,1.07,0,0,0,1.142-1.068V32.278a3.362,3.362,0,0,0-2.445-3.231" fill="#717171"/>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                      
+                    <p class="pl-3 mb-0 normal-text">
+                        上班族
+                        <br>
+                        22歲～65歲
+                    </p>                  
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p class="yellow-text yellowLine">Device</p>
+                <div class="iconGroup d-flex justify-md-content-around align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54" height="50.925" viewBox="0 0 54 50.925" class="mr-3">
+                        <defs>
+                          <clipPath id="clip-path">
+                            <rect id="Rectangle_2394" data-name="Rectangle 2394" width="54" height="50.925" transform="translate(0 0)" fill="#717171"/>
+                          </clipPath>
+                        </defs>
+                        <g id="Device_PC_icon" transform="translate(0 0)">
+                          <g id="Group_5787" data-name="Group 5787" clip-path="url(#clip-path)">
+                            <path id="Path_2902" data-name="Path 2902" d="M49.611,0H4.415A4.42,4.42,0,0,0,0,4.415V35.088A4.42,4.42,0,0,0,4.415,39.5H19.566V45.42h-2.39a2.715,2.715,0,1,0,0,5.429H36.853a2.715,2.715,0,1,0,0-5.429h-2.39V39.5H49.611a4.419,4.419,0,0,0,4.414-4.414V4.415A4.42,4.42,0,0,0,49.611,0M43.163,36.788a1.23,1.23,0,1,1,1.228-1.229,1.227,1.227,0,0,1-1.228,1.229m5.43.3a1.524,1.524,0,1,1,1.522-1.524,1.524,1.524,0,0,1-1.522,1.524m1.813-4.588H3.619V4.415a.8.8,0,0,1,.8-.8h45.2a.8.8,0,0,1,.795.8Z" fill="#717171"/>
+                          </g>
+                        </g>
+                      </svg>
+                      
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.051" height="49.06" viewBox="0 0 29.051 49.06">
+                        <defs>
+                        <clipPath id="clip-path">
+                            <rect id="Rectangle_65" data-name="Rectangle 65" width="29.051" height="49.06" transform="translate(0 0.255)" fill="#717171"/>
+                        </clipPath>
+                        </defs>
+                        <g id="Device_MB_icon" transform="translate(0 -0.255)">
+                        <g id="Group_101" data-name="Group 101" clip-path="url(#clip-path)">
+                            <path id="Path_64" data-name="Path 64" d="M24.29,0H3.582A3.586,3.586,0,0,0,0,3.582V45.63a3.581,3.581,0,0,0,3.582,3.582H24.29a3.58,3.58,0,0,0,3.582-3.582V3.582A3.586,3.586,0,0,0,24.29,0M8.827,2.181H19.045c.262,0,.473.385.473.858s-.211.868-.473.868H8.827c-.264,0-.465-.386-.465-.868s.2-.858.465-.858m5.114,43.491a2.285,2.285,0,1,1,2.275-2.284,2.294,2.294,0,0,1-2.275,2.284m11.241-7.836H2.688V6.052H25.182Z" fill="#717171"/>
+                        </g>
+                        </g>
+                    </svg>
+                    
+                    <p class="pl-3 mb-0 normal-text mobile-width">
+                        雖然多數手機操作，仍有支援網頁版格式
+                    </p>                  
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p class="yellow-text yellowLine">Design Tools</p>
+                <div class="iconGroup d-flex">
+                    <svg id="Tools_XD_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45" height="45" viewBox="0 0 45 45">
+                        <defs>
+                          <clipPath id="clip-path">
+                            <rect id="Rectangle_2395" data-name="Rectangle 2395" width="45" height="45" fill="none"/>
+                          </clipPath>
+                        </defs>
+                        <g id="Group_5790" data-name="Group 5790">
+                          <g id="Group_5789" data-name="Group 5789" clip-path="url(#clip-path)">
+                            <path id="Path_2903" data-name="Path 2903" d="M40.771,45H4.229A4.241,4.241,0,0,1,0,40.771V4.229A4.241,4.241,0,0,1,4.229,0H40.771A4.241,4.241,0,0,1,45,4.229V40.771A4.241,4.241,0,0,1,40.771,45" fill="#717171"/>
+                            <text id="X" transform="translate(5.544 32.879)" fill="#fff" font-size="30.165" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">X</tspan></text>
+                          </g>
+                        </g>
+                        <text id="d" transform="translate(25.544 33.132)" fill="#fff" font-size="26.837" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">d</tspan></text>
+                      </svg>
+                      
+                </div>
+            </div>
+        </div>
+        <div class="d-flex row ">
+            <div class="col-md-12">
+                <p class="yellow-text yellowLine">Schedule</p>
+                <div class="timeLine mb-4">
+                    <div class="timeLineGroup">
+                        <div class="timeLineCircle">
+                            2020
+                        </div>
+                        <p class="gray-text normal-text mb-0">9/16 <br> Plan </span>
+                    </div>
+                    <div class="timeLineGroup">
+                        <div class="timeLineCircle">
+                        </div>
+                        <p class="gray-text normal-text mb-0">9/24 <br>Wireframe </span>
+                    </div>
+                    <div class="timeLineGroup">
+                        <div class="timeLineCircle">
+                        </div>
+                        <p class="gray-text normal-text mb-0">9/29 <br>Complete </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+<div class="myContainer mt-0 pt-0 pb-0">
+    <p class="yellow-text yellowLine">Guideline</p>
+    <div>
+        <img src="./images_02/PCguildline_03.png" alt="">
+    </div>
+</div>   
+
+
+<div>
+    <img src="./images_02/bgc-03.png" alt="">
+</div>
+<div class="myOtherWork bottomBox">
+    <p class="text-center pb-4">Thanks for watch<br>there’s my other Works</p>
+    <div class="row">
+        <div class="col-md-3 col-6 ptb-2">
+            <a href="portfolio-design02.html">
+                <img src="./images.html/workPC_MockUp-img01.png" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-6 ptb-2">
+            <a href="portfolio-design03.html">
+                <img src="./images.html/workPC_MockUp_img03.png" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-6 ptb-2">
+            <a href="portfolio-design04.html">
+                <img src="./images.html/workPC_MockUp_img02.png" alt="">
+            </a>
+        </div>
+        <div class="col-md-3 col-6 ptb-2">
+            <a href="portfolio-design05.html">
+                <img src="./images.html/workPC_MockUp_img04.png" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+<div class="goBackHome bottomBox">
+    <p class="text-center pb-4">Or maybe you want to </p>
+    <a class="GoBackBtn" href="index.html">Go Home</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
