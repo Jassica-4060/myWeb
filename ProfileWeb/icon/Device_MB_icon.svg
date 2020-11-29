@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.051" height="49.06" viewBox="0 0 29.051 49.06">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_65" data-name="Rectangle 65" width="29.051" height="49.06" transform="translate(0 0.255)" fill="#717171"/>
+    </clipPath>
+  </defs>
+  <g id="Device_MB_icon" transform="translate(0 -0.255)">
+    <g id="Group_101" data-name="Group 101" clip-path="url(#clip-path)">
+      <path id="Path_64" data-name="Path 64" d="M24.29,0H3.582A3.586,3.586,0,0,0,0,3.582V45.63a3.581,3.581,0,0,0,3.582,3.582H24.29a3.58,3.58,0,0,0,3.582-3.582V3.582A3.586,3.586,0,0,0,24.29,0M8.827,2.181H19.045c.262,0,.473.385.473.858s-.211.868-.473.868H8.827c-.264,0-.465-.386-.465-.868s.2-.858.465-.858m5.114,43.491a2.285,2.285,0,1,1,2.275-2.284,2.294,2.294,0,0,1-2.275,2.284m11.241-7.836H2.688V6.052H25.182Z" fill="#717171"/>
+    </g>
+  </g>
+</svg>
