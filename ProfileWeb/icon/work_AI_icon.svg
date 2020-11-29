@@ -1,0 +1,8 @@
+<svg id="work_AI_icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <path id="Path_1464" data-name="Path 1464" d="M35.789,39.191l-31.826.251A3.694,3.694,0,0,1,.251,35.789L0,3.963A3.694,3.694,0,0,1,3.654.252L35.48,0a3.694,3.694,0,0,1,3.711,3.654l.251,31.826a3.693,3.693,0,0,1-3.654,3.712" transform="translate(0.279 0.279)" fill="#efa211"/>
+  <rect id="Rectangle_1738" data-name="Rectangle 1738" width="40" height="40" transform="translate(0)" fill="none"/>
+  <g id="AI" transform="translate(8 7)">
+    <text id="A" transform="translate(0.166 21.134) rotate(-0.452)" fill="#fff" font-size="23" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">A</tspan></text>
+    <text id="i" transform="matrix(1, -0.008, 0.008, 1, 17.489, 21.047)" fill="#fff" font-size="23" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">i</tspan></text>
+  </g>
+</svg>
