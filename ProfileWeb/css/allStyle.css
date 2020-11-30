@@ -64,12 +64,14 @@ img{
     padding: 80px 35px
 }
 .myOtherWork{
-    background:#cddee6;
+    background:#fff;
 }
+
 
 .goBackHome{
     background:#F5F8FA;
 }
+
 
 @media screen and  (max-width:500px){
     .myContainer{
